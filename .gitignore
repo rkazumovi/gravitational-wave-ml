@@ -1,0 +1,38 @@
+# Virtual environment
+venv/
+.venv/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+build/
+dist/
+
+# Data & outputs (large / regenerable) -- but keep the validation plots,
+# since the README embeds them directly.
+data/*
+!data/.gitkeep
+outputs/*
+!outputs/.gitkeep
+!outputs/*.png
+outputs/training_pool.npz
+outputs/*.keras
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Env / secrets
+.env
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Local tooling metadata
+.claude/

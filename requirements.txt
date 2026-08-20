@@ -1,0 +1,36 @@
+# Gravitational Wave Detection System — dependency pins
+# Verified working on: Windows 11, Python 3.13.5 (see docs/step1_environment_setup.md)
+#
+# Deliberately minimal ML/scientific stack: TensorFlow + SciPy + Matplotlib only.
+# No PyTorch, no scikit-learn, no pandas.
+
+# --- Core ML ---
+tensorflow==2.21.0
+
+# --- Scientific computing ---
+scipy==1.18.0
+# numpy is pulled in transitively by tensorflow/scipy; pinned explicitly for reproducibility
+numpy==2.5.2
+h5py==3.14.0
+
+# --- Visualization ---
+matplotlib==3.11.1
+plotly==6.3.1
+dash==3.4.0
+
+# --- Real LIGO/Virgo data access ---
+# gwpy is intentionally NOT used: its igwn-segments dependency requires compiling a
+# C extension, and no prebuilt wheel exists yet for Python 3.13 on Windows. Using
+# gwosc (pure Python) + h5py + our own SciPy-based signal pipeline instead.
+gwosc==0.8.3
+
+# --- API / deployment ---
+fastapi==0.121.2
+uvicorn[standard]==0.40.0
+pydantic==2.13.1
+
+# --- Monitoring ---
+prometheus-client==0.24.1
+
+# --- Testing ---
+pytest==9.1.1
