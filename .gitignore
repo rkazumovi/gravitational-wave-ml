@@ -24,15 +24,19 @@ outputs/*.keras
 .ipynb_checkpoints/
 
 # Env / secrets
-.env
 
 # OS
 .DS_Store
 Thumbs.db
 
 # IDE
-.vscode/
 .idea/
 
 # Local tooling metadata
 .claude/
+branch_structure.json
+temp_auto_push.bat
+temp_interactive_push.bat
+.gitignore
+config.bat
+node_modules

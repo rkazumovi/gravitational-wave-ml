@@ -160,7 +160,7 @@ The last row is the meaningful check: the model was never trained on the real ev
 | **Testing** | pytest |
 | **Environment** | venv, pip |
 
-No PyTorch, scikit-learn, or pandas — every model, signal-processing routine, and physics calculation in this repository is implemented directly on TensorFlow, SciPy, and NumPy.
+No PyTorch, scikit-learn, or pandas — every model, signal-processing routine, and physics calculation in this repository is implemented directly on TensorFlow, SciPy, and NumPy. `gwpy` was deliberately avoided too: its `igwn-segments` dependency requires compiling a C extension with no prebuilt wheel yet for Python 3.13 on Windows, so real LIGO/Virgo data access goes through the pure-Python `gwosc` client plus a hand-built SciPy signal pipeline instead.
 
 ---
 
@@ -182,6 +182,10 @@ gravitational-wave-ml/
 │   ├── models/
 │   │   ├── detector.py          # CNN + BiLSTM binary signal/noise classifier
 │   │   └── train_detector.py    # Full training loop + real-data validation
+│   ├── estimation/              # Reserved for parameter estimation (not yet implemented)
+│   ├── api/                     # Reserved for the FastAPI service (not yet implemented)
+│   ├── dashboard/                # Reserved for the Plotly/Dash monitoring dashboard (not yet implemented)
+│   ├── monitoring/                # Reserved for Prometheus metrics (not yet implemented)
 │   └── verify_environment.py    # Dependency + live GWOSC connectivity check
 ├── tests/                       # 42 tests, real-data validated, no mocks
 ├── docs/                        # Derivations and validation write-up per pipeline stage
